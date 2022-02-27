@@ -1,0 +1,43 @@
+.landingPage {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.bg {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../photos/LandingPageBG.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+
+.logo {
+    margin: 30px;
+}
+
+.logo h1 {
+    color: whitesmoke;
+    cursor: none;
+    user-select: none;
+    text-shadow: 10px 10px 10px whitesmoke;
+}
+
+.startBtn {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 25px 50px;
+    color: whitesmoke;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: black;
+}

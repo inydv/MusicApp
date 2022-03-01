@@ -1,0 +1,151 @@
+.leftMenu {
+  background-color: rgba(35,36,40,255);
+  height: 90vh;
+  width: 20%;
+  position: absolute;
+  top: 5vh;
+  border-radius: 35px;
+}
+
+.logos h1 {
+  font-size: 30px;
+  margin-top: 10px;
+  text-align: center;
+  color: whitesmoke;
+  cursor: none;
+  user-select: none;
+  text-shadow: 5px 10px 10px whitesmoke;
+}
+
+.conatiner {
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.conatiner li {
+  list-style: none;
+  display: flex;
+  color: whitesmoke;
+  margin-top: 10px;
+}
+
+.conatiner li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.conatiner li i {
+  margin-right: 20px;
+}
+
+.collection {
+  margin-top: 40px;
+  margin-left: 30px;
+  width: 75%;
+}
+
+.collectionHeading {
+  color: whitesmoke;
+}
+
+.collectionDiv {
+  margin-top: 10px;
+  height: 25vh;
+  overflow-y: scroll;
+}
+
+.collectionDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.listLink {
+  text-decoration: none;
+  color: whitesmoke;
+  display: flex;
+}
+
+.listId {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.listIcon {
+  margin-right: 20px;
+}
+
+.listName {
+  width: 80%;
+}
+
+.general {
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.generalHeading {
+  color: whitesmoke;
+}
+
+.generalConatiner li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.generalConatiner li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.generalConatiner li a i {
+  margin-right: 20px;
+}
+
+.modes {
+  background-color: rgba(39,39,48,255);
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-left: 30px;
+  border: 1px solid none;
+  border-radius: 20px;
+  width: 40%;
+  padding: 10px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.active {
+  color: darkgreen;
+}
+
+@media only screen and (max-width: 600px) {
+  .leftMenu {
+    width: 35%;
+  }
+  .conatiner {
+    margin-left: 10px;
+  }
+  .conatiner li i {
+    margin-right: 10px;
+  }
+
+  .collection {
+    margin-left: 10px;
+  }
+
+  .listIcon {
+    margin-right: 10px;
+  }
+
+  .general {
+    margin-left: 10px;
+  }
+
+  .generalConatiner li a i {
+    margin-right: 10px;
+  }
+
+  .modes {
+    margin-left: 20px;
+  }
+}

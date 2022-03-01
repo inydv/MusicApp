@@ -1,5 +1,4 @@
 .leftMenu {
-  background-color: rgba(35,36,40,255);
   height: 90vh;
   width: 20%;
   position: absolute;
@@ -11,10 +10,8 @@
   font-size: 30px;
   margin-top: 10px;
   text-align: center;
-  color: whitesmoke;
   cursor: none;
   user-select: none;
-  text-shadow: 5px 10px 10px whitesmoke;
 }
 
 .conatiner {
@@ -25,13 +22,11 @@
 .conatiner li {
   list-style: none;
   display: flex;
-  color: whitesmoke;
   margin-top: 10px;
 }
 
 .conatiner li a {
   text-decoration: none;
-  color: whitesmoke;
 }
 
 .conatiner li i {
@@ -42,10 +37,6 @@
   margin-top: 40px;
   margin-left: 30px;
   width: 75%;
-}
-
-.collectionHeading {
-  color: whitesmoke;
 }
 
 .collectionDiv {
@@ -60,7 +51,6 @@
 
 .listLink {
   text-decoration: none;
-  color: whitesmoke;
   display: flex;
 }
 
@@ -82,13 +72,8 @@
   margin-left: 30px;
 }
 
-.generalHeading {
-  color: whitesmoke;
-}
-
 .generalConatiner li a {
   text-decoration: none;
-  color: whitesmoke;
 }
 
 .generalConatiner li {
@@ -112,10 +97,6 @@
   padding: 10px;
   color: whitesmoke;
   cursor: pointer;
-}
-
-.active {
-  color: darkgreen;
 }
 
 @media only screen and (max-width: 600px) {

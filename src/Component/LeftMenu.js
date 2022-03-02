@@ -7,78 +7,16 @@ import { BsFillEmojiSunglassesFill } from "react-icons/bs";
 import { GiMoonBats } from "react-icons/gi";
 import Collections from "./Collections";
 
-function LeftMenu() {
-
-  const [LeftMenuBGColor, setLeftMenuBGColor] = useState({
-    backgroundColor: "rgba(35,36,40,255)"
-  })
-
-  const [LeftMenuLogoColor, setLeftMenuLogoColor] = useState({
-    color: "whitesmoke",
-    textShadow: "5px 10px 10px whitesmoke"
-  })
-
-  const [LeftMenuTextColor, setLeftMenuTextColor] = useState({
-    color: "whitesmoke"
-  })
-
-  const [LeftMenuLightModeColor, setLeftMenuLightModeColor] = useState({
-    color: "white"
-  })
-
-  const [LeftMenuDarkModeColor, setLeftMenuDarkModeColor] = useState({
-    color: "darkgreen"
-  })
-
-  function lightMode() {
-
-      setLeftMenuBGColor({
-        backgroundColor: "rgba(237,237,237,255)"
-      })
-      setLeftMenuLogoColor({
-        color: "black",
-        textShadow: "5px 10px 10px black"
-      })
-      setLeftMenuTextColor({
-        color: "black"
-      })
-      setLeftMenuLightModeColor({
-        color: "darkgreen"
-      })
-      setLeftMenuDarkModeColor({
-        color: "white"
-      })
-  }
-
-  function darkMode() {
-
-    setLeftMenuBGColor({
-      backgroundColor: "rgba(35,36,40,255)"
-    })
-    setLeftMenuLogoColor({
-      color: "whitesmoke",
-      textShadow: "5px 10px 10px whitesmoke"
-    })
-    setLeftMenuTextColor({
-      color: "whitesmoke"
-    })
-    setLeftMenuLightModeColor({
-      color: "white"
-    })
-    setLeftMenuDarkModeColor({
-      color: "darkgreen"
-    })
-  }
-
+function LeftMenu(props) {
   return (
-    <div className="leftMenu" style={LeftMenuBGColor}>
+    <div className="leftMenu" style={props.LeftMenuBGColor}>
       <div className="logos">
-        <h1 style={LeftMenuLogoColor}>DROP BROS</h1>
+        <h1 style={props.LeftMenuLogoColor}>DROP BROS</h1>
       </div>
 
       <ul className="conatiner">
         <li>
-          <a href="#" style={LeftMenuTextColor}>
+          <a href="#" style={props.LeftMenuTextColor}>
             <i>
               <AiFillHome />
             </i>
@@ -86,7 +24,7 @@ function LeftMenu() {
           </a>
         </li>
         <li>
-          <a href="#" style={LeftMenuTextColor}>
+          <a href="#" style={props.LeftMenuTextColor}>
             <i>
               <MdRadio />
             </i>
@@ -95,14 +33,14 @@ function LeftMenu() {
         </li>
       </ul>
 
-      <Collections style={LeftMenuTextColor} />
+      <Collections style={props.LeftMenuTextColor} />
 
       <div className="general">
-        <h6 className="generalHeading" style={LeftMenuTextColor}>GENERAL</h6>
+        <h6 className="generalHeading" style={props.LeftMenuTextColor}>GENERAL</h6>
 
         <ul className="generalConatiner">
           <li>
-            <a href="#" style={LeftMenuTextColor}>
+            <a href="#" style={props.LeftMenuTextColor}>
               <i>
                 <AiFillSetting />
               </i>
@@ -110,7 +48,7 @@ function LeftMenu() {
             </a>
           </li>
           <li>
-            <a href="#" style={LeftMenuTextColor}>
+            <a href="#" style={props.LeftMenuTextColor}>
               <i>
                 <BiLogOutCircle />
               </i>
@@ -120,9 +58,9 @@ function LeftMenu() {
         </ul>
       </div>
 
-      <div className="modes">
-        <BsFillEmojiSunglassesFill onClick={lightMode} style={LeftMenuLightModeColor} />
-        <GiMoonBats onClick={darkMode} style={LeftMenuDarkModeColor} />
+      <div className="modes" style={props.ModeBGColor}>
+        <BsFillEmojiSunglassesFill onClick={props.HomeLightMode} style={props.LightModeColor} />
+        <GiMoonBats onClick={props.HomeDarkMode} style={props.DarkModeColor} />
       </div>
     </div>
   );

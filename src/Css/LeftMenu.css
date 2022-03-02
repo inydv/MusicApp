@@ -86,7 +86,6 @@
 }
 
 .modes {
-  background-color: rgba(39,39,48,255);
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
@@ -95,7 +94,6 @@
   border-radius: 20px;
   width: 40%;
   padding: 10px;
-  color: whitesmoke;
   cursor: pointer;
 }
 

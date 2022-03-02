@@ -1,0 +1,16 @@
+.musicPlayer {
+    background-color: rgba(35,36,40,255);
+    height: 20vh;
+    position: absolute;
+    left: 23%;
+    bottom: 5vh;
+    width: 75%;
+    border-radius: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .musicPlayer {
+      left: 38%;
+      width: 55%;
+    }
+  }

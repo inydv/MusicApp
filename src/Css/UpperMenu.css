@@ -1,0 +1,30 @@
+.upperMenu {
+    position: absolute;
+    left: 23%;
+    top: 5vh;
+}
+
+.secondP {
+    margin-top: 10px;
+}
+
+.m {
+    color: rgb(100, 214, 7);
+    font-size: 22px;
+}
+
+.o {
+    color: rgb(240, 112, 112);
+    font-size: 22px;
+}
+
+.d {
+    color: rgb(145, 214, 236);
+    font-size: 22px;
+}
+
+@media only screen and (max-width: 600px) {
+    .upperMenu {
+      left: 38%;
+    }
+}

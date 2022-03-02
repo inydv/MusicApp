@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../Css/Home.css";
 import LeftMenu from "./LeftMenu";
+import MainContainer from "./MainContainer";
+import MusicPlayer from "./MusicPlayer";
+import UpperMenu from "./UpperMenu";
 
 export default function Home() {
   const [BGColor, setBGColor] = useState({
@@ -33,6 +36,10 @@ export default function Home() {
     color: "whitesmoke"
   })
 
+  const [UpperMenuColor, setUpperMenuColor] = useState({
+    color: "whitesmoke"
+  })
+
   function HomeLightMode() {
     setBGColor({
       backgroundColor: "rgba(237,237,237,255)",
@@ -55,6 +62,9 @@ export default function Home() {
     })
     setLightModeColor({
       color: "darkgreen"
+    })
+    setUpperMenuColor({
+      color: "black"
     })
   }
 
@@ -79,7 +89,10 @@ export default function Home() {
       color: "darkgreen"
     })
     setLightModeColor({
-      color: "white"
+      color: "whitesmoke"
+    })
+    setUpperMenuColor({
+      color: "whitesmoke"
     })
   }
 
@@ -95,6 +108,12 @@ export default function Home() {
         DarkModeColor={DarkModeColor}
         LightModeColor={LightModeColor}
       />
+
+      <UpperMenu UpperMenuColor={UpperMenuColor} />
+
+      <MainContainer />
+
+      <MusicPlayer />
     </div>
   );
 }

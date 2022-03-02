@@ -1,0 +1,16 @@
+.mainContainer {
+  background-color: rgba(35, 36, 40, 255);
+  height: 55vh;
+  position: absolute;
+  left: 23%;
+  bottom: 28vh;
+  width: 75%;
+  border-radius: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .mainContainer {
+    left: 38%;
+    width: 55%;
+  }
+}

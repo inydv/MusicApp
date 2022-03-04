@@ -1,16 +1,50 @@
 .mainContainer {
-  background-color: rgba(35, 36, 40, 255);
   height: 55vh;
   position: absolute;
   left: 23%;
   bottom: 28vh;
   width: 75%;
   border-radius: 30px;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mainContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.items {
+  height: 40vh;
+  width: 20%;
+  margin: 30px;  
+}
+
+.items img {
+  height: 35vh;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.items h5 {
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
   .mainContainer {
     left: 38%;
     width: 55%;
+  }
+
+  .items {
+    height: 30vh;
+    width: 70%;
+  }
+
+  .items img {
+    height: 25vh;
+    width: 100%;
   }
 }

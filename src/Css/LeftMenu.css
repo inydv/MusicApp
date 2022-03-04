@@ -41,7 +41,7 @@
 
 .collectionDiv {
   margin-top: 10px;
-  height: 25vh;
+  height: 43vh;
   overflow-y: scroll;
 }
 
@@ -49,7 +49,7 @@
   display: none;
 }
 
-.listLink {
+/* .listLink {
   text-decoration: none;
   display: flex;
 }
@@ -65,25 +65,7 @@
 
 .listName {
   width: 80%;
-}
-
-.general {
-  margin-top: 40px;
-  margin-left: 30px;
-}
-
-.generalConatiner li a {
-  text-decoration: none;
-}
-
-.generalConatiner li {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.generalConatiner li a i {
-  margin-right: 20px;
-}
+} */
 
 .modes {
   display: flex;
@@ -112,17 +94,9 @@
     margin-left: 10px;
   }
 
-  .listIcon {
+  /* .listIcon {
     margin-right: 10px;
-  }
-
-  .general {
-    margin-left: 10px;
-  }
-
-  .generalConatiner li a i {
-    margin-right: 10px;
-  }
+  } */
 
   .modes {
     margin-left: 20px;

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../Css/LeftMenu.css";
-import { AiFillHome, AiFillSetting } from "react-icons/ai";
+import { AiFillHome} from "react-icons/ai";
 import { MdRadio } from "react-icons/md";
-import { BiLogOutCircle } from "react-icons/bi";
 import { BsFillEmojiSunglassesFill } from "react-icons/bs";
 import { GiMoonBats } from "react-icons/gi";
 import Collections from "./Collections";
@@ -33,30 +32,7 @@ function LeftMenu(props) {
         </li>
       </ul>
 
-      <Collections style={props.LeftMenuTextColor} />
-
-      <div className="general">
-        <h6 className="generalHeading" style={props.LeftMenuTextColor}>GENERAL</h6>
-
-        <ul className="generalConatiner">
-          <li>
-            <a href="#" style={props.LeftMenuTextColor}>
-              <i>
-                <AiFillSetting />
-              </i>
-              Setting
-            </a>
-          </li>
-          <li>
-            <a href="#" style={props.LeftMenuTextColor}>
-              <i>
-                <BiLogOutCircle />
-              </i>
-              Log Out
-            </a>
-          </li>
-        </ul>
-      </div>
+      <Collections track={props.track} style={props.LeftMenuTextColor} />
 
       <div className="modes" style={props.ModeBGColor}>
         <BsFillEmojiSunglassesFill onClick={props.HomeLightMode} style={props.LightModeColor} />

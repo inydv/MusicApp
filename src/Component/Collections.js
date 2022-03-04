@@ -4,9 +4,9 @@ import { CollectionsList } from "./CollectionsList";
 function Collections(props) {
   return (
     <div className="collection">
-      <h6 className="collectionHeading" style={props.style}>COLLECTION</h6>
+      <h6 className="collectionHeading" style={props.style}>ARTIST</h6>
 
-      <div className="collectionDiv">
+      {/* <div className="collectionDiv">
         <ul className="collectonList">
           {CollectionsList &&
             CollectionsList.map((list) => (
@@ -18,6 +18,12 @@ function Collections(props) {
               </li>
             ))}
         </ul>
+      </div> */}
+
+      <div className="collectionDiv">
+      { props.track.map((ele) => {
+         return <CollectionsList artists={ele.artists} image={ele.share.avatar} />
+      })}
       </div>
     </div>
   );

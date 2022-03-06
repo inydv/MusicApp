@@ -16,13 +16,12 @@ function Collections(props) {
           {props.Radio &&
             props.Radio.map((list) => (
               <li className="listId" key={list.channel_id}>
-                <a
-                  href="#"
+                <p
                   className="listLink"
                   style={props.ComponentTextColor}
                 >
                   <div className="listName">{list.name}</div>
-                </a>
+                </p>
               </li>
             ))}
         </ul>

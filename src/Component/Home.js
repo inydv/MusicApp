@@ -116,14 +116,16 @@ export default function Home() {
       <UpperMenu ComponentTextColor={ComponentTextColor} />
 
       <MainContainer
-      songs={songs}
-       setMainSong={setMainSong}
+        songs={songs}
+        setMainSong={setMainSong}
         ComponentBGColor={ComponentBGColor}
         ComponentTextColor={ComponentTextColor}
       />
 
       <MusicPlayer
-      song={song} imgSrc={img} autoplay={auto}
+        song={song}
+        imgSrc={img}
+        autoplay={auto}
         ComponentBGColor={ComponentBGColor}
         ComponentTextColor={ComponentTextColor}
       />

@@ -17,13 +17,14 @@
 }
 
 .items {
-  height: 40vh;
-  width: 20%;
-  margin: 10px;  
+  height: 30vh;
+  width: 15%;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .items img {
-  height: 35vh;
+  height: 25vh;
   width: 100%;
   border-radius: 10px;
 }

@@ -1,29 +1,31 @@
 import React from "react";
-import { CollectionsList } from "./CollectionsList";
+import { MdRadio } from "react-icons/md";
 
 function Collections(props) {
   return (
     <div className="collection">
-      <h6 className="collectionHeading" style={props.style}>ARTIST</h6>
+      <div className="conatiner" style={props.ComponentTextColor}>
+        <i>
+          <MdRadio />
+        </i>
+        RADIO TRACKS
+      </div>
 
-      {/* <div className="collectionDiv">
+      <div className="collectionDiv">
         <ul className="collectonList">
-          {CollectionsList &&
-            CollectionsList.map((list) => (
-              <li className="listId" key={list.id}>
-                <a href="#" className="listLink" style={props.style}>
-                  <i className="listIcon">{list.icon}</i>
+          {props.Radio &&
+            props.Radio.map((list) => (
+              <li className="listId" key={list.channel_id}>
+                <a
+                  href="#"
+                  className="listLink"
+                  style={props.ComponentTextColor}
+                >
                   <div className="listName">{list.name}</div>
                 </a>
               </li>
             ))}
         </ul>
-      </div> */}
-
-      <div className="collectionDiv">
-      { props.track.map((ele) => {
-         return <CollectionsList artists={ele.artists} image={ele.share.avatar} />
-      })}
       </div>
     </div>
   );

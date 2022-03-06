@@ -23,9 +23,13 @@
   border-radius: 50px;
 }
 
+.songAttributes {
+  display: flex;
+}
+
 @media only screen and (max-width: 600px) {
     .musicPlayer {
-      left: 38%;
+      left: calc(38% + 10px);
       width: 55%;
     }
   }

@@ -1,60 +1,52 @@
 {
     "tracks": [
         {
-            "layout": "5",
-            "type": "MUSIC",
-            "key": "104382921",
-            "title": "Ginseng Strip 2002",
-            "subtitle": "Yung Lean",
-            "share": {
-                "subject": "Ginseng Strip 2002 - Yung Lean",
-                "text": "I used Shazam to discover Ginseng Strip 2002 by Yung Lean.",
-                "href": "https://www.shazam.com/track/104382921/ginseng-strip-2002",
-                "image": "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/e9/c4/bd/e9c4bd59-080d-329b-c763-7a7baabb9377/7071245098315_1.jpg/400x400cc.jpg",
-                "twitter": "I used @Shazam to discover Ginseng Strip 2002 by Yung Lean.",
-                "html": "https://www.shazam.com/snippets/email-share/104382921?lang=en-US&country=US",
-                "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/45/87/f9/4587f9b0-8bfd-91f2-f920-a665073f1607/pr_source.png/800x800cc.jpg",
-                "snapchat": "https://www.shazam.com/partner/sc/track/104382921"
-            },
-            "images": {
-                "background": "https://is4-ssl.mzstatic.com/image/thumb/Features125/v4/45/87/f9/4587f9b0-8bfd-91f2-f920-a665073f1607/pr_source.png/800x800cc.jpg",
-                "coverart": "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/e9/c4/bd/e9c4bd59-080d-329b-c763-7a7baabb9377/7071245098315_1.jpg/400x400cc.jpg",
-                "coverarthq": "https://is3-ssl.mzstatic.com/image/thumb/Music124/v4/e9/c4/bd/e9c4bd59-080d-329b-c763-7a7baabb9377/7071245098315_1.jpg/400x400cc.jpg",
-                "joecolor": "b:1e1f24p:fffdffs:9ccb5et:d1d0d3q:83a852"
-            },
-            "artists": [
+            "artists":[
                 {
-                    "alias": "yung-lean",
-                    "id": "42917790",
-                    "adamid": "472502104"
-                }
-            ],
-            "url": "https://www.shazam.com/track/104382921/ginseng-strip-2002"
-        },
-        {
-            "layout": "5",
-            "type": "MUSIC",
-            "key": "589545994",
-            "title": "Enemy (From the series Arcane League of Legends)",
-            "subtitle": "Imagine Dragons, Arcane & League of Legends",
-            "artists": [
-                {
-                    "alias": "imagine-dragons",
-                    "id": "40951653",
-                    "adamid": "358714030"
+                "name":"Faustix",
+                "type":"artist"
                 },
                 {
-                    "alias": "jid",
-                    "id": "205872444",
-                    "adamid": "282841404"
+                "name":"LIZZY",
+                "type":"artist"
                 },
                 {
-                    "alias": "league-of-legends",
-                    "id": "200581421",
-                    "adamid": "960030338"
+                "name":"MAYLYN",
+                "type":"artist"
                 }
-            ],
-            "url": "https://www.shazam.com/track/589545994/enemy-from-the-series-arcane-league-of-legends"
-        }
-    ]
+                ],
+                "type":"single",
+                "song":"Secrets (feat. MAYLYN)",
+                "image":"https://i.scdn.co/image/ab67616d0000b2732c46d5e52bf5ea00a72e7353",
+                "spotify_url":"https://open.spotify.com/album/7bHPY3KOl44SXIf7rsRmlq"
+            },
+            {
+                "artists":[
+                    {
+                    "name":"Sandro Cavazza",
+                    "type":"artist"
+                    }
+                    ],
+                    "type":"single",
+                    "song":"The Days",
+                    "image":"https://i.scdn.co/image/ab67616d0000b2737aef189702aac52da26d4c9c",
+                    "spotify_url":"https://open.spotify.com/album/4dLgdo7d2lTiVnK4Fzk3Zu"
+            },
+            {
+                "artists":[
+                    {
+                    "name":"Cheat Codes",
+                    "type":"artist"
+                    },
+                    {
+                    "name":"Icona Pop",
+                    "type":"artist"
+                    }
+                    ],
+                    "type":"single",
+                    "song":"Payback (feat. Icona Pop)",
+                    "image":"https://i.scdn.co/image/ab67616d0000b273dd22d7c43aa6aa2593829d48",
+                    "spotify_url":"https://open.spotify.com/album/7xerYbkUGD5BazNdP6OaZW"
+            }
+        ]
 }

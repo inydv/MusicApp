@@ -1,15 +1,18 @@
 import React from "react";
 import "../Css/UpperMenu.css";
 
-function UpperMenu(props) {
+function UpperMenu({ ComponentTextColor }) {
+  // Derefrencing of props
   return (
     <div className="upperMenu">
-      <h4 className="firstP" style={props.UpperMenuColor}>Hello Buddy 👋</h4>
-      <h3 className="secondP" style={props.UpperMenuColor}>
+      <h5 className="firstP" style={ComponentTextColor}>
+        Your Songs Here Buddy👋
+      </h5>
+      <h4 className="secondP" style={ComponentTextColor}>
         Your <span className="m">M</span>
-        <span className='o'>oo</span>
-        <span className='d'>d</span> Today ?
-      </h3>
+        <span className="o">oo</span>
+        <span className="d">d</span> Today ?
+      </h4>
     </div>
   );
 }

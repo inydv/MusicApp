@@ -5,7 +5,7 @@
   bottom: 28vh;
   width: 75%;
   border-radius: 30px;
-  overflow: scroll;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -19,7 +19,7 @@
 .items {
   height: 40vh;
   width: 20%;
-  margin: 30px;  
+  margin: 10px;  
 }
 
 .items img {
@@ -34,8 +34,8 @@
 
 @media only screen and (max-width: 600px) {
   .mainContainer {
-    left: 38%;
-    width: 55%;
+    left: calc(38% + 10px);
+    width: 50%;
   }
 
   .items {
@@ -44,7 +44,7 @@
   }
 
   .items img {
-    height: 25vh;
+    height: 20vh;
     width: 100%;
   }
 }

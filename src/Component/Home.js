@@ -91,18 +91,22 @@ export default function Home() {
   const [songs, setSongs] = useState(tracks);
   const [song, setSong] = useState(songs[0].song);
   const [img, setImage] = useState(songs[0].imgSrc);
-  const [auto, setAuto] = useState(false);
 
   const setMainSong = (songSrc, image) => {
     setSong(songSrc);
     setImage(image);
-    setAuto(true);
+  };
+
+  const setRadio = (uri, image_url) => {
+    setSong(uri);
+    setImage(image_url);
   };
 
   return (
     <div className="home" style={BGColor}>
       <LeftMenu
         Radio={Radio}
+        setRadio={setRadio}
         HomeLightMode={HomeLightMode}
         HomeDarkMode={HomeDarkMode}
         ComponentBGColor={ComponentBGColor}
@@ -125,7 +129,6 @@ export default function Home() {
       <MusicPlayer
         song={song}
         imgSrc={img}
-        autoplay={auto}
         ComponentBGColor={ComponentBGColor}
         ComponentTextColor={ComponentTextColor}
       />

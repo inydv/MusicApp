@@ -7,7 +7,6 @@ function MusicPlayer({
   ComponentTextColor,
   song,
   imgSrc,
-  auto,
 }) {
   const [isPlaying, setPlay] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -23,7 +22,7 @@ function MusicPlayer({
 
     // set max prop with out seconds in input[range]
     progressBar.current.max = seconds;
-  }, [audioPlayer?.current?.loadedmetada, audioPlayer?.current?.readyState]);
+  }, [audioPlayer.current?.loadedmetadata, audioPlayer?.current?.readyState]);
 
   const changePlayPause = () => {
     const prevValue = isPlaying;
@@ -82,7 +81,7 @@ function MusicPlayer({
       </div>
 
       <div className="songAttributes" style={ComponentTextColor}>
-        <audio src={song} preload="metadata" ref={audioPlayer} />
+        <audio src={song} ref={audioPlayer} />
         <div className="top">
           <div className="back">
             <i>
@@ -115,7 +114,6 @@ function MusicPlayer({
             ref={progressBar}
             defaultValue="0"
             onChange={changeProgress}
-            autoPlay={auto}
           />
           <div className="duration">
             {duration && !isNaN(duration) && calculateTime(duration)

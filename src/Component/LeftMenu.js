@@ -13,6 +13,7 @@ function LeftMenu(props) {
 
       <Collections
         Radio={props.Radio}
+        setRadio={props.setRadio}
         ComponentTextColor={props.ComponentTextColor}
       />
 

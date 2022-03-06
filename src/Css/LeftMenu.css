@@ -19,7 +19,6 @@
   margin-top: 30px;
   margin-left: 30px;
   width: 80%;
-  height: 60vh;
 }
 
 .conatiner {
@@ -33,6 +32,7 @@
 }
 
 .collectionDiv {
+  height: 60vh;
   overflow-y: scroll;
   margin-top: 10px;
 }

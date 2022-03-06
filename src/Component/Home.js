@@ -88,6 +88,17 @@ export default function Home() {
     });
   }
 
+  const [songs, setSongs] = useState(tracks);
+  const [song, setSong] = useState(songs[0].song);
+  const [img, setImage] = useState(songs[0].imgSrc);
+  const [auto, setAuto] = useState(false);
+
+  const setMainSong = (songSrc, image) => {
+    setSong(songSrc);
+    setImage(image);
+    setAuto(true);
+  };
+
   return (
     <div className="home" style={BGColor}>
       <LeftMenu
@@ -105,13 +116,14 @@ export default function Home() {
       <UpperMenu ComponentTextColor={ComponentTextColor} />
 
       <MainContainer
-        track={tracks}
+      songs={songs}
+       setMainSong={setMainSong}
         ComponentBGColor={ComponentBGColor}
         ComponentTextColor={ComponentTextColor}
       />
 
       <MusicPlayer
-        track={tracks}
+      song={song} imgSrc={img} autoplay={auto}
         ComponentBGColor={ComponentBGColor}
         ComponentTextColor={ComponentTextColor}
       />

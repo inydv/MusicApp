@@ -1,19 +1,17 @@
 .musicPlayer {
-    background-color: rgba(35,36,40,255);
-    height: 20vh;
-    position: absolute;
-    left: 23%;
-    bottom: 5vh;
-    width: 75%;
-    border-radius: 30px;
+  height: 20vh;
+  position: absolute;
+  left: 23%;
+  bottom: 5vh;
+  width: 75%;
+  border-radius: 30px;
 }
 
 .songImage {
-  position: relative;
-  top: 20px;
-  left: 50px;
-  width: 80px;
-  height: 80px;
+  padding-top: 1%;
+  padding-left: 3%;
+  width: 100px;
+  height: 100px;
 }
 
 .songImage img {
@@ -23,13 +21,75 @@
   border-radius: 50px;
 }
 
-.songAttributes {
+.top {
+  width: 20%;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  position: absolute;
+  left: 45%;
+  top: 8%;
+}
+
+.bottom {
+  height: 4vh;
+  position: absolute;
+  left: 20%;
+  top: 55%;
+  width: 70%;
+  justify-content: space-around;
   display: flex;
 }
 
+.progressBar {
+  position: absolute;
+  top: 100%;
+  width: 55%;
+  height: 5px;
+  outline: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* .progressBar::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: #848484;
+  width: var(--played-width);
+  height: 100%;
+  border-radius: 10px;
+  z-index: 2;
+  transition: width 250ms linear;
+} */
+
 @media only screen and (max-width: 600px) {
-    .musicPlayer {
-      left: calc(38% + 10px);
-      width: 55%;
-    }
+  .musicPlayer {
+    left: calc(38% + 10px);
+    width: 50%;
   }
+
+  .songImage {
+    padding-top: 8%;
+    padding-left: 3%;
+    width: 60px;
+    height: 60px;
+  }
+
+  .top {
+    width: 50%;
+    height: 10vh;
+  }
+
+  .bottom {
+    left: 0;
+    width: 100%;
+  }
+
+  .progressBar {
+    width: 80%;
+  }
+}

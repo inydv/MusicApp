@@ -2,17 +2,17 @@ import React from "react";
 import "../Css/MainContainer.css";
 
 function MainContainer(props) {
-  let { ComponentBGColor, ComponentTextColor, track } = props;
+  let { ComponentBGColor, ComponentTextColor, songs, setMainSong } = props;
+
   return (
     <div className="mainContainer" style={ComponentBGColor}>
-      {track.map((ele) => {
-        return (
-          <div className="items">
-            <img src={ele.image} />
-            <h5 style={ComponentTextColor}>{ele.song}</h5>
+      {songs &&
+        songs.map((ele) => (
+          <div className="items" key={ele?.id} onClick={() => setMainSong(ele?.song, ele?.imgSrc)}>
+            <img src={ele?.imgSrc} />
+            <h5 style={ComponentTextColor}>{ele?.artist}</h5>
           </div>
-        );
-      })}
+        ))}
     </div>
   );
 }

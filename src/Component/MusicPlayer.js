@@ -2,8 +2,13 @@ import React, { useState, useRef, useEffect } from "react";
 import "../Css/MusicPlayer.css";
 import { FaStepForward, FaStepBackward, FaPlay, FaPause } from "react-icons/fa";
 
-function MusicPlayer({ song, image, spotify_url }) {  // derefrencing
-
+function MusicPlayer({
+  ComponentBGColor,
+  ComponentTextColor,
+  song,
+  imgSrc,
+  auto,
+}) {
   const [isPlaying, setPlay] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrenttime] = useState(0);
@@ -71,37 +76,35 @@ function MusicPlayer({ song, image, spotify_url }) {  // derefrencing
   };
 
   return (
-    <div className="musicPlayer">
+    <div className="musicPlayer" style={ComponentBGColor}>
       <div className="songImage">
-        {/* <img src="https://png.pngtree.com/png-clipart/20200225/original/pngtree-love-song-icon-png-image_5273877.jpg" /> */}
-        {/* <img src={image} /> */}
+        <img src={imgSrc} />
       </div>
 
-      <div className="songAttributes">
-        <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="metadata" ref={audioPlayer} />
-        {/* <audio src={spotify_url} preload="metadata" ref={audioPlayer} /> */}
-
-
-        <div className="back">
-          <i>
-            <FaStepBackward />
-          </i>
-        </div>
-        <div className="playPause" onClick={changePlayPause}>
-          {isPlaying ? (
+      <div className="songAttributes" style={ComponentTextColor}>
+        <audio src={song} preload="metadata" ref={audioPlayer} />
+        <div className="top">
+          <div className="back">
             <i>
-              <FaPause />
+              <FaStepBackward />
             </i>
-          ) : (
+          </div>
+          <div className="playPause" onClick={changePlayPause}>
+            {isPlaying ? (
+              <i>
+                <FaPause />
+              </i>
+            ) : (
+              <i>
+                <FaPlay />
+              </i>
+            )}
+          </div>
+          <div className="forward">
             <i>
-              <FaPlay />
+              <FaStepForward />
             </i>
-          )}
-        </div>
-        <div className="forward">
-          <i>
-            <FaStepForward />
-          </i>
+          </div>
         </div>
 
         <div className="bottom">
@@ -112,6 +115,7 @@ function MusicPlayer({ song, image, spotify_url }) {  // derefrencing
             ref={progressBar}
             defaultValue="0"
             onChange={changeProgress}
+            autoPlay={auto}
           />
           <div className="duration">
             {duration && !isNaN(duration) && calculateTime(duration)

@@ -24,7 +24,7 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
     setDuration(seconds);
     // set max prop with out seconds in input[range]
     progressBar.current.max = seconds;
-  });
+  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
 
   const calculateTime = (sec) => {
     const minutes = Math.floor(sec / 60);
@@ -82,7 +82,7 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
   return (
     <div className="musicPlayer" style={ComponentBGColor}>
       <div className="songImage">
-        <img src={imgSrc} />
+        <img src={imgSrc} alt="" />
       </div>
 
       <div className="songAttributes" style={ComponentTextColor}>
@@ -111,7 +111,7 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
           </div>
         </div>
 
-        {calculateTime(duration) == "Infinity : NaN" ? (
+        {calculateTime(duration) === "Infinity : NaN" ? (
           <div className="bottom" ref={progressBar}>
             <div className="currentTime">--:--</div>
             <input

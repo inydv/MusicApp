@@ -9,7 +9,7 @@ function MainContainer(props) {
       {songs &&
         songs.map((ele) => (
           <div className="items" key={ele.id} onClick={() => setMainSong(ele.song, ele.imgSrc)}>
-            <img src={ele.imgSrc} />
+            <img src={ele.imgSrc} alt="" />
             <h5 style={ComponentTextColor}>{ele.artist}</h5>
           </div>
         ))}

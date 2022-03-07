@@ -2,19 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import "../Css/MusicPlayer.css";
 import { FaStepForward, FaStepBackward, FaPlay, FaPause } from "react-icons/fa";
 
-function MusicPlayer({
-  ComponentBGColor,
-  ComponentTextColor,
-  song,
-  imgSrc,
-}) {
+function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
   const [isPlaying, setPlay] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrenttime] = useState(0);
 
   const audioPlayer = useRef(); //   reference to our audio component
   const progressBar = useRef(); //   reference to our prgressbar
-  const animationRef = useRef(); //  reference to our animation
+  const animationRef = useRef();
 
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
@@ -22,7 +17,7 @@ function MusicPlayer({
 
     // set max prop with out seconds in input[range]
     progressBar.current.max = seconds;
-  }, [audioPlayer.current?.loadedmetadata, audioPlayer?.current?.readyState]);
+  }, [audioPlayer.current?.loadedmetadata, audioPlayer.current?.readyState]);
 
   const changePlayPause = () => {
     const prevValue = isPlaying;
@@ -54,14 +49,6 @@ function MusicPlayer({
 
   const changeProgress = () => {
     audioPlayer.current.currentTime = progressBar.current.value;
-
-    // progressBar.current.style.setProperty(
-    //   "--played-width",
-    //   `${(progressBar.current.value / duration) * 100}%`
-    // );
-
-    // setCurrenttime(progressBar.current.value);
-
     changeCurrentTime();
   };
 

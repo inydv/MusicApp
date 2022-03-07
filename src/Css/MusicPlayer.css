@@ -53,6 +53,10 @@
   border-radius: 10px;
 }
 
+.currentTime, .duration {
+  user-select: none;
+}
+
 /* .progressBar::before {
   position: absolute;
   content: "";
@@ -69,12 +73,12 @@
 @media only screen and (max-width: 600px) {
   .musicPlayer {
     left: calc(38% + 10px);
-    width: 50%;
+    width: 55%;
   }
 
   .songImage {
     padding-top: 8%;
-    padding-left: 3%;
+    padding-left: 8%;
     width: 60px;
     height: 60px;
   }
@@ -85,6 +89,7 @@
   }
 
   .bottom {
+    top: 60%;
     left: 0;
     width: 100%;
   }

@@ -42,7 +42,7 @@
 }
 
 .listId {
-  margin-top: 5px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -72,6 +72,9 @@
   }
   .collection {
     margin-left: 10px;
+  }
+  .collectionDiv {
+    height: 55vh;
   }
   .modes {
     margin-left: 20px;

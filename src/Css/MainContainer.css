@@ -17,6 +17,7 @@
 }
 
 .items {
+  padding: 20px;
   height: 30vh;
   width: 15%;
   margin: 10px;
@@ -36,7 +37,7 @@
 @media only screen and (max-width: 600px) {
   .mainContainer {
     left: calc(38% + 10px);
-    width: 50%;
+    width: 55%;
   }
 
   .items {

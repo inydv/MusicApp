@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../Css/MusicPlayer.css";
-import { FaStepForward, FaStepBackward, FaPlay, FaPause } from "react-icons/fa";
+import { FaPlay, FaPause } from "react-icons/fa";
+import { BsFillSkipForwardFill, BsFillSkipBackwardFill } from "react-icons/bs";
 
 function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
   const [isPlaying, setPlay] = useState(false);
@@ -11,13 +12,27 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
   const progressBar = useRef(); //   reference to our prgressbar
   const animationRef = useRef();
 
+  const [Songs, setSongs] = useState(song);
+
+  useEffect(() => {
+    setSongs(song);
+    setPlay(false);
+  }, [song]);
+
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
     setDuration(seconds);
-
     // set max prop with out seconds in input[range]
     progressBar.current.max = seconds;
-  }, [audioPlayer.current?.loadedmetadata, audioPlayer.current?.readyState]);
+  });
+
+  const calculateTime = (sec) => {
+    const minutes = Math.floor(sec / 60);
+    const returnMin = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const seconds = Math.floor(sec % 60);
+    const returnSec = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${returnMin} : ${returnSec}`;
+  };
 
   const changePlayPause = () => {
     const prevValue = isPlaying;
@@ -39,14 +54,6 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
     animationRef.current = requestAnimationFrame(whilePlaying);
   };
 
-  const calculateTime = (sec) => {
-    const minutes = Math.floor(sec / 60);
-    const returnMin = minutes < 10 ? `0${minutes}` : `${minutes}`;
-    const seconds = Math.floor(sec % 60);
-    const returnSec = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    return `${returnMin} : ${returnSec}`;
-  };
-
   const changeProgress = () => {
     audioPlayer.current.currentTime = progressBar.current.value;
     changeCurrentTime();
@@ -54,11 +61,22 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
 
   const changeCurrentTime = () => {
     progressBar.current.style.setProperty(
-      "--played-width",
+      "--seek-before-width",
       `${(progressBar.current.value / duration) * 100}%`
     );
 
     setCurrenttime(progressBar.current.value);
+  };
+
+  const back = () => {
+    progressBar.current.value = Number(progressBar.current.value - 5);
+    changeProgress();
+  };
+
+  const forward = () => {
+    progressBar.current.value = progressBar.current.value + 1;
+    changeProgress();
+    console.log(progressBar.current.value);
   };
 
   return (
@@ -68,11 +86,11 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
       </div>
 
       <div className="songAttributes" style={ComponentTextColor}>
-        <audio src={song} ref={audioPlayer} />
+        <audio src={Songs} ref={audioPlayer} />
         <div className="top">
           <div className="back">
             <i>
-              <FaStepBackward />
+              <BsFillSkipBackwardFill onClick={back} />
             </i>
           </div>
           <div className="playPause" onClick={changePlayPause}>
@@ -88,26 +106,39 @@ function MusicPlayer({ ComponentBGColor, ComponentTextColor, song, imgSrc }) {
           </div>
           <div className="forward">
             <i>
-              <FaStepForward />
+              <BsFillSkipForwardFill onClick={forward} />
             </i>
           </div>
         </div>
 
-        <div className="bottom">
-          <div className="currentTime">{calculateTime(currentTime)}</div>
-          <input
-            type="range"
-            className="progressBar"
-            ref={progressBar}
-            defaultValue="0"
-            onChange={changeProgress}
-          />
-          <div className="duration">
-            {duration && !isNaN(duration) && calculateTime(duration)
-              ? duration && !isNaN(duration) && calculateTime(duration)
-              : "00:00"}
+        {calculateTime(duration) == "Infinity : NaN" ? (
+          <div className="bottom" ref={progressBar}>
+            <div className="currentTime">--:--</div>
+            <input
+              type="range"
+              className="progressBar"
+              defaultValue="0"
+              onChange={changeProgress}
+            />
+            <div className="duration">--:--</div>
           </div>
-        </div>
+        ) : (
+          <div className="bottom">
+            <div className="currentTime">{calculateTime(currentTime)}</div>
+            <input
+              type="range"
+              className="progressBar"
+              ref={progressBar}
+              defaultValue="0"
+              onChange={changeProgress}
+            />
+            <div className="duration">
+              {duration && calculateTime(duration)
+                ? duration && calculateTime(duration)
+                : "00:00"}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

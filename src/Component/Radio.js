@@ -74,7 +74,7 @@ let Radio = [
   {
     image_url:
       "https://mypromotions.sfo2.cdn.digitaloceanspaces.com/radios/59620.jpg",
-    name: "BBC Hindi - नमस्कार भारत",
+    name: "BBC Hindi",
     uri: "https://stream.live.vc.bbcmedia.co.uk/bbc_hindi_radio",
     channel_id: 59620,
     countryCode: "in",
